@@ -1,6 +1,7 @@
 # Basic config options
 
 redis_config_path: /etc/redis
+redis_daemonize: yes
 redis_pidfile: /run/redis/redis-server.pid
 redis_port: 6379
 redis_tcp_backlog: 511
@@ -37,7 +38,7 @@ redis_auto_aof_rewrite_min_size: 128mb
 redis_aof_load_truncated: yes
 redis_lua_time_limit: 5000
 redis_slowlog_slower_than: 10000
-redis_slowlog_max_length: 128
+redis_slowlog_max_len: 128
 redis_latency_monitor_threshold: 0
 
 redis_hash_max_ziplist_entries: 512

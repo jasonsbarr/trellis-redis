@@ -1,0 +1,52 @@
+daemonize {{ redis_daemonize }}
+pidfile {{ redis_pidfile }}
+port {{ redis_port }}
+tcp_backlog {{ redis_tcp_backlog }}
+bind {{ redis_bind }}
+timeout {{ redis_timeout }}
+tcp-keepalive {{ redis_tcp_keepalive }}
+loglevel {{ redis_loglevel }}
+logfile {{ redis_logfile }}
+databases {{ redis_databases }}
+
+save {{ redis_save_900 }}
+save {{ redis_save_300 }}
+save {{ redis_save_60 }}
+
+stop-writes-on-bgsave-error {{ redis_stop_writes_on_bgsave_error }}
+rdbcompression {{ redis_rdbcompression }}
+rdbchecksum {{ redis_rdbchecksum }}
+dbfilename {{ redis_dbfilename }}
+dir {{ redis_dir }}
+
+maxclients {{ redis_maxclients }}
+maxmemory {{ redis_maxmemory }}
+maxmemory-policy {{ redis_maxmemory_policy }}
+maxmemory-samples {{ redis_maxmemory_samples }}
+
+appendonly {{ redis_appendonly }}
+appendfilename {{ redis_appendfilename }}
+appendfsync {{ redis_appendfsync }}
+no-appendfsync-on-rewrite {{ redis_no_appendfsync_on_rewrite }}
+auto-aof-rewrite-percentage {{ redis_auto_aof_rewrite_percentage }}
+auto-aof-rewrite-min-size {{ redis_auto_aof_rewrite_min_size }}
+aof-load-truncated {{ redis_aof_load_truncated }}
+lua-time-limit {{ redis_lua_timelimit }}
+slowlog-log-slower-than {{ redis_slowlog_slower_than }}
+slowlog-max-len {{ redis_slowlog_max_len }}
+latency-monitor-threshold {{ redis_latency_monitor_threshold }}
+
+hash-max-ziplist-entries {{ redis_hash_max_ziplist_entries }}
+hash-max-ziplist-value {{ redis_hasn_max_ziplist_value }}
+list-max-ziplist-entries {{ redis_list_max_ziplist_entries }}
+list-max-ziplist-value {{ redis_list_max_ziplist_value }}
+set-max-intset-entries {{ redis_set_max_intset_entries }}
+zset-max-ziplist-entries {{ redis_zset_max_ziplist_entries }}
+zset-max-ziplist-value {{ redis_zset_max_ziplist_value }}
+hll-sparse-max-bytes {{ redis_hll_sparse_max_bytes }}
+activerehashing {{ redis_activerehashing }}
+
+client-output-buffer-limit {{ redis_client_output_buffer_limit_normal }}
+
+hz {{ redis_hz }}
+aof-rewrite-incremental-fsync {{ redis_aof_rewrite_incremental_fsync }}
