@@ -1,3 +1,4 @@
+---
 galaxy_info:
   author: Jason Barr
   description: Install and configure Redis in Trellis as an object cache.
