@@ -1,0 +1,57 @@
+# Basic config options
+
+redis_config_path: /etc/redis
+redis_pidfile: /run/redis/redis-server.pid
+redis_port: 6379
+redis_tcp_backlog: 511
+redis_bind: 127.0.0.1
+redis_timeout: 0
+redis_tcp_keepalive: 0
+redis_loglevel: notice
+redis_logfile: /var/log/redis/redis-server.log
+redis_databases: 16
+
+# To add additional DB saves you have to add them to templates/redis.conf.j2
+redis_save_900: 900 1
+redis_save_300: 300 10
+redis_save_60: 60 10000
+
+redis_stop_writes_on_bgsave_error: yes
+redis_rdbcompression: yes
+redis_rdbchecksum: yes
+redis_dbfilename: dump.rdb
+redis_dir: /var/lib/redis
+redis_maxclients: 10000
+
+# Max memory values
+redis_maxmemory: 128mb
+redis_maxmemory_policy: noeviction
+redis_maxmemory_samples: 3
+
+redis_appendonly: no
+redis_appendfilename: appendonly.aof
+redis_appendfsync: everysec
+redis_no_appendfsync_on_rewrite: no
+redis_auto_aof_rewrite_percentage: 100
+redis_auto_aof_rewrite_min_size: 128mb
+redis_aof_load_truncated: yes
+redis_lua_time_limit: 5000
+redis_slowlog_slower_than: 10000
+redis_slowlog_max_length: 128
+redis_latency_monitor_threshold: 0
+
+redis_hash_max_ziplist_entries: 512
+redis_hasn_max_ziplist_value: 64
+redis_list_max_ziplist_entries: 512
+redis_list_max_ziplist_value: 64
+redis_set_max_intset_entries: 512
+redis_zset_max_ziplist_entries: 128
+redis_zset_max_ziplist_value: 64
+redis_hll_sparse_max_bytes: 3000
+redis_activerehashing: yes
+
+# To add slave/pubsub entries you must add them to templates/redis.conf.j2
+redis_client_output_buffer_limit_normal: normal 0 0 0
+
+redis_hz: 10
+redis_aof_rewrite_incremental_fsync: yes
