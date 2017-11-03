@@ -13,3 +13,8 @@
   service:
     name: redis-server
     state: reloaded
+
+- name: Restart php-fpm
+  service:
+    name: php7.1-fpm
+    state: restarted

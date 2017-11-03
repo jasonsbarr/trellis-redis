@@ -11,7 +11,7 @@
     pkg: php-redis
     state: installed
     update_cache: true
-  notify: Restart Redis
+  notify: Restart php-fpm
 
 - name: Configure Redis
   template:
