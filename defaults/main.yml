@@ -14,7 +14,7 @@ redis_loglevel: notice
 redis_logfile: /var/log/redis/redis-server.log
 redis_databases: 16
 
-redis_save
+redis_save:
   - 900 1
   - 300 10
   - 60 10000
