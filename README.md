@@ -12,11 +12,11 @@ Add the role to the requirements.yml file of Trellis :
 ```yaml
 - name: trellis-redis
   src: jasonsbarr.trellis-redis
-  version: 0.1.0
+  version: 0.2.4
 ```
 
 Run `ansible-galaxy install -r requirements.yml` to install the new role.<br>
-Then, add the role into server.yml :
+Then, add the role into both server.yml **and** dev.yml:
 ```yaml
 roles:
     ... other Trellis roles ...
