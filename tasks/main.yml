@@ -1,0 +1,27 @@
+---
+- name: Install Redis
+  apt:
+    pkg: redis-server
+    state: installed
+    update_cache: true
+  notify: Start Redis
+
+- name: Install php-redis
+  apt:
+    pkg: php-redis
+    state: installed
+    update_cache: true
+  notify: Restart Redis
+
+- name: Configure Redis
+  template:
+    src: redis.conf.j2
+    dest: "{{ redis_config_path }}"
+    mode: 0640
+  notify: Restart Redis
+
+- name: Set Redis to Run on Boot
+  service:
+    name: redis-server
+    state: started
+    enabled: yes
