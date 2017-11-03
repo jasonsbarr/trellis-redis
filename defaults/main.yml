@@ -4,6 +4,8 @@ redis_config_path: /etc/redis
 redis_daemonize: yes
 redis_pidfile: /run/redis/redis-server.pid
 redis_port: 6379
+redis_unixsocket: ""
+redis_requirepass: ""
 redis_tcp_backlog: 511
 redis_bind: 127.0.0.1
 redis_timeout: 0
@@ -12,10 +14,10 @@ redis_loglevel: notice
 redis_logfile: /var/log/redis/redis-server.log
 redis_databases: 16
 
-# To add additional DB saves you have to add them to templates/redis.conf.j2
-redis_save_900: 900 1
-redis_save_300: 300 10
-redis_save_60: 60 10000
+redis_save
+  - 900 1
+  - 300 10
+  - 60 10000
 
 redis_stop_writes_on_bgsave_error: yes
 redis_rdbcompression: yes
@@ -51,8 +53,8 @@ redis_zset_max_ziplist_value: 64
 redis_hll_sparse_max_bytes: 3000
 redis_activerehashing: yes
 
-# To add slave/pubsub entries you must add them to templates/redis.conf.j2
-redis_client_output_buffer_limit_normal: normal 0 0 0
+redis_client_output_buffer_limit:
+  - normal 0 0 0
 
 redis_hz: 10
 redis_aof_rewrite_incremental_fsync: yes

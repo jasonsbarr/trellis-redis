@@ -1,6 +1,17 @@
+# {{ ansible_managed }}
+
 daemonize {{ redis_daemonize }}
 pidfile {{ redis_pidfile }}
 port {{ redis_port }}
+
+{% if redis_unixsocket %}
+unixsocket {{ redis_unixsocket }}
+{% endif %}
+
+{% if redis_requirepass %}
+requirepass {{ redis_requirepass }}
+{% endif %}
+
 tcp_backlog {{ redis_tcp_backlog }}
 bind {{ redis_bind }}
 timeout {{ redis_timeout }}
@@ -9,9 +20,9 @@ loglevel {{ redis_loglevel }}
 logfile {{ redis_logfile }}
 databases {{ redis_databases }}
 
-save {{ redis_save_900 }}
-save {{ redis_save_300 }}
-save {{ redis_save_60 }}
+{% for save in redis_save %}
+save {{ save }}
+{% endfor %}
 
 stop-writes-on-bgsave-error {{ redis_stop_writes_on_bgsave_error }}
 rdbcompression {{ redis_rdbcompression }}
@@ -46,7 +57,9 @@ zset-max-ziplist-value {{ redis_zset_max_ziplist_value }}
 hll-sparse-max-bytes {{ redis_hll_sparse_max_bytes }}
 activerehashing {{ redis_activerehashing }}
 
-client-output-buffer-limit {{ redis_client_output_buffer_limit_normal }}
+{% for client in redis_client_output_buffer_limit %}
+client-output-buffer-limit {{ client }}
+{% endfor %}
 
 hz {{ redis_hz }}
 aof-rewrite-incremental-fsync {{ redis_aof_rewrite_incremental_fsync }}
