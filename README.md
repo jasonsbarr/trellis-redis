@@ -12,7 +12,7 @@ Add the role to the requirements.yml file of Trellis :
 ```yaml
 - name: trellis-redis
   src: jasonsbarr.trellis-redis
-  version: 0.2.4
+  version: 0.2.5
 ```
 
 Run `ansible-galaxy install -r requirements.yml` to install the new role.<br>
@@ -22,3 +22,5 @@ roles:
     ... other Trellis roles ...
     - { role: trellis-redis, tags: [redis]}
 ```
+
+After adding the role to the above files and running the install, provision your Vagrant box with `vagrant reload --provision` (if it's running) or `vagrant provision` (if it's not). If you haven't provisioned the box yet simply run `vagrant up`.
