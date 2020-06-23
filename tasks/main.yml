@@ -16,7 +16,7 @@
 - name: Configure Redis
   template:
     src: redis.conf.j2
-    dest: "{{ redis_config_path }}"
+    dest: "{{ redis_config_path }}/redis.conf"
     mode: 0640
   notify: Restart Redis
 
