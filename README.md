@@ -11,7 +11,7 @@ Get Started
 Add the role to the requirements.yml file of Trellis :
 ```yaml
 - name: trellis-redis
-  src: marksabbath.trellis_redis
+  src: im-mortal.trellis_redis
   version: 0.2.6
 ```
 
