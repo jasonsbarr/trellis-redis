@@ -2,14 +2,14 @@
 - name: Install Redis
   apt:
     pkg: redis-server
-    state: installed
+    state: present
     update_cache: true
   notify: Start Redis
 
 - name: Install php-redis
   apt:
     pkg: php-redis
-    state: installed
+    state: present
     update_cache: true
   notify: Restart php-fpm
 
