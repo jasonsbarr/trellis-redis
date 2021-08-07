@@ -12,6 +12,12 @@
     state: present
     update_cache: true
   notify: Restart php-fpm
+  
+- name: Install php7.4-redis
+  apt:
+    pkg: php7.4-redis
+    state: present
+    update_cache: true
 
 - name: Configure Redis
   template:
