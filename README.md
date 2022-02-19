@@ -1,3 +1,5 @@
+Note: this package isn't maintained anymore, but if you need to do something like upgrade the PHP version there are several forks available.
+
 Trellis Redis
 =========
 
